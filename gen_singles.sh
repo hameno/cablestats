@@ -14,10 +14,10 @@ for i in "${!FREQUENCIES[@]}"; do
         --slope-mode \
         -w 600 -h 150 \
         -l 0 -u 55620 \
-        DEF:bmin=/root/rrd/$1.rrd:bandwidth:MIN \
-        DEF:bmax=/root/rrd/$1.rrd:bandwidth:MAX \
-        DEF:blast=/root/rrd/$1.rrd:bandwidth:LAST \
-        DEF:bavg=/root/rrd/$1.rrd:bandwidth:AVERAGE \
+        DEF:bmin=${BASE_DIR}/$1.rrd:bandwidth:MIN \
+        DEF:bmax=${BASE_DIR}/$1.rrd:bandwidth:MAX \
+        DEF:blast=${BASE_DIR}/$1.rrd:bandwidth:LAST \
+        DEF:bavg=${BASE_DIR}/$1.rrd:bandwidth:AVERAGE \
         AREA:55620#c9feb8 \
         STACK:4380#feb8b8 \
         VDEF:allmax=bavg,MAXIMUM \
