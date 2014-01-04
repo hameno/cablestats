@@ -6,7 +6,7 @@ source ./config.sh
 source ./constants.sh
 
 for i in "${!TIMES[@]}"; do
-    rrdtool graph ${BASE_DIR}/images/upper-${FILE_NAMES[$i]}.png \
+    rrdtool graph ${BASE_DIR}/images/lower-${FILE_NAMES[$i]}.png \
     --title="${LOCATION} | Lower Channels | ${TIMES_NAMES[$i]}" \
     --vertical-label='kBit per Second' \
     -W "${HOST} @ $(date '+%F %T %Z')" \
