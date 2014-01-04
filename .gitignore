@@ -1,4 +1,4 @@
 *.rrd
 .idea/
 *.iml
-images/*
+images/*.png
