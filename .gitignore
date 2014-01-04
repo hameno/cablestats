@@ -1,0 +1,4 @@
+*.rrd
+.idea/
+*.iml
+images/*
