@@ -15,3 +15,8 @@ Installation
 * * * * * /root/cablestats/freq_collect.sh
 */5 * * * * /root/cablestats/cron.sh
 ```
+
+Credits
+-------
+
+All scripts are based upon the work of fLoo (https://coresec.de/)
