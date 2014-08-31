@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Load configuration
 source ./config.sh
@@ -6,8 +6,7 @@ source ./config.sh
 source ./constants.sh
 
 for i in "${!FREQUENCIES[@]}"; do
-    rrdtool create ${FREQUENCIES[$i]}.rrd
-    --step 60 \
+    rrdtool create ${FREQUENCIES[$i]}.rrd --step 60 \
     DS:bandwidth:GAUGE:105:0:U \
     RRA:MIN:0.5:5:288 \
     RRA:MIN:0.5:30:336 \
