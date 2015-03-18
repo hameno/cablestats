@@ -15,7 +15,7 @@ for i in "${!FREQUENCIES[@]}"; do
     timeout 5 dvbtune -f ${FREQUENCIES[$i]} -s 6950 -qam 256 > /dev/null 2>&1
     SNOOP_RESULT=`timeout 10 dvbsnoop -s bandwidth 8190 -n 3500 -hideproginfo`
     if [ $? -eq 0 ]; then
-        BW=`echo ${SNOOP_RESULT} | awk -F: 'END { print $NF }' | sed 's/^[ \t]*/
+        BW=`echo ${SNOOP_RESULT} | awk -F: 'END { print $NF }' | sed 's/^[ \t]*//' | awk '{print $1}'`
         echo "Freq: ${FREQUENCIES[$i]} Measured: ${BW} kbit/s"
         rrdtool update ${BASE_DIR}/${FREQUENCIES[$i]}.rrd N:${BW}
     fi
